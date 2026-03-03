@@ -8,8 +8,9 @@ const popularSearches = ["UI Designer", "UX Researcher", "Android", "Admin"]
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F8FD]">
+    <section className="relative overflow-hidden bg-[#F8F8FD] [clip-path:polygon(0_0,100%_0,100%_75%,80%_100%,0_100%)] !border-0 !outline-none">
       {/* Background Pattern */}
+      
       <Image
         src="/images/pattern.svg"
         alt="Pattern"
@@ -23,7 +24,7 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
           {/* Left Text + Search */}
           <div>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground font-[var(--font-heading)] md:text-5xl lg:text-6xl text-balance">
+            <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground font-title md:text-5xl lg:text-6xl text-balance">
               Discover <br className="hidden sm:block" />
               more than <br className="hidden sm:block" />
               <span className="text-accent-blue">5000+ Jobs</span>

@@ -7,7 +7,7 @@ export function CtaBanner() {
         <div className="relative overflow-hidden rounded-2xl bg-cta-bg px-6 py-12 lg:px-16 lg:py-16">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-extrabold text-white font-[var(--font-heading)] md:text-4xl text-balance">
+              <h2 className="text-3xl font-semibold text-white font-title md:text-4xl text-balance">
                 Start posting jobs today
               </h2>
               <p className="mt-4 text-base text-white/70">

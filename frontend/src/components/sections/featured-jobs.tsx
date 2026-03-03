@@ -106,7 +106,7 @@ export function FeaturedJobs() {
     <section className="bg-background py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-end justify-between">
-          <h2 className="text-3xl font-extrabold text-foreground font-[var(--font-heading)] md:text-4xl">
+          <h2 className="text-3xl font-semibold text-foreground font-title md:text-4xl">
             Featured{" "}
             <span className="text-accent-blue">jobs</span>
           </h2>
@@ -134,7 +134,7 @@ export function FeaturedJobs() {
                   {job.type}
                 </Badge>
               </div>
-              <h3 className="mt-4 text-base font-bold text-foreground font-[var(--font-heading)]">
+              <h3 className="mt-4 text-base font-semibold text-foreground">
                 {job.title}
               </h3>
               <p className="mt-1 text-xs text-muted-foreground">

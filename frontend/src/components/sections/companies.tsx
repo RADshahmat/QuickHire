@@ -15,7 +15,7 @@ export function Companies() {
           {companies.map((company) => (
             <span
               key={company.name}
-              className="text-xl font-bold tracking-wide text-muted-foreground/60 md:text-2xl font-[var(--font-heading)]"
+              className="text-xl font-semibold tracking-wide text-muted-foreground/60 md:text-2xl "
             >
               {company.text}
             </span>

@@ -27,7 +27,7 @@ export function Categories() {
     <section className="bg-background py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-end justify-between">
-          <h2 className="text-3xl font-extrabold text-foreground font-[var(--font-heading)] md:text-4xl">
+          <h2 className="text-3xl font-semibold text-foreground font-title md:text-4xl">
             Explore by{" "}
             <span className="text-accent-blue">category</span>
           </h2>

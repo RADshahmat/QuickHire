@@ -79,10 +79,10 @@ const latestJobs = [
 
 export function LatestJobs() {
   return (
-    <section className="bg-secondary/30 py-14 lg:py-20">
+    <section className="bg-[#F8F8FD] py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-end justify-between">
-          <h2 className="text-3xl font-extrabold text-foreground font-[var(--font-heading)] md:text-4xl">
+          <h2 className="text-3xl font-semibold text-foreground font-title md:text-4xl">
             Latest{" "}
             <span className="text-accent-blue">jobs open</span>
           </h2>
@@ -100,13 +100,13 @@ export function LatestJobs() {
             <Link
               key={`${job.title}-${job.company}-${i}`}
               href="#"
-              className="group flex items-start gap-4 rounded-xl border border-border bg-background p-4 transition-all hover:border-primary/30 hover:shadow-md lg:p-5"
+              className="group flex items-start gap-4 bg-background p-4 transition-all hover:border-primary/30 hover:shadow-md lg:p-5"
             >
-              <div className={`flex size-12 shrink-0 items-center justify-center rounded-xl text-sm font-bold ${job.logoBg} ${job.logoColor}`}>
+              <div className={`flex size-12 shrink-0 items-center justify-center rounded-xl text-sm font-semibold ${job.logoBg} ${job.logoColor}`}>
                 {job.logo}
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-base font-bold text-foreground font-[var(--font-heading)]">
+                <h3 className="text-base font-semibold text-foreground">
                   {job.title}
                 </h3>
                 <p className="mt-0.5 text-sm text-muted-foreground">
@@ -119,7 +119,7 @@ export function LatestJobs() {
                       variant="outline"
                       className={`text-xs font-medium ${
                         tag === "Full-Time"
-                          ? "border-primary/20 text-primary"
+                          ? "border-chart-2 text-chart-2"
                           : tag === "Marketing"
                           ? "border-amber-200 bg-amber-50 text-amber-700"
                           : "border-primary/20 bg-primary/5 text-primary"

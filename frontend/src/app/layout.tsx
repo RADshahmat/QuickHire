@@ -1,47 +1,46 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Manrope } from 'next/font/google'
+import localFont from 'next/font/local'
+import { Inter, Epilogue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import '../styles/globals.css'
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
-export const metadata: Metadata = {
-  title: 'QuickHire - Discover 5000+ Jobs',
-  description: 'Great platform for the job seeker that searching for new career heights and passionate about startups.',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
+const epilogue = Epilogue({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-epilogue',
+})
 
-export const viewport: Viewport = {
-  themeColor: '#ffffff',
-  width: 'device-width',
-  initialScale: 1,
-}
+const clash = localFont({
+  src: [
+    { path: '../fonts/ClashDisplay-Regular.otf', weight: '400' },
+    { path: '../fonts/ClashDisplay-Semibold.otf', weight: '600' },
+    { path: '../fonts/ClashDisplay-Bold.otf', weight: '700' },
+  ],
+  variable: '--font-clash',
+})
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} font-sans antialiased`}>
+      <body
+        className={`
+          ${epilogue.variable}
+          ${inter.variable}
+          
+          ${clash.variable}
+          
+          antialiased
+        `}
+      >
         {children}
         <Analytics />
       </body>
