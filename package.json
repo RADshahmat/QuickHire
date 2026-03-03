@@ -2,7 +2,7 @@
   "name": "quickhire",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+     "dev": "concurrently -k -n FRONTEND -c green \"npm run dev --prefix frontend\""
   },
   "devDependencies": {
     "concurrently": "^8.0.0"

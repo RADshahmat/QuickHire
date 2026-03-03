@@ -29,7 +29,7 @@ export function Categories() {
         <div className="flex items-end justify-between">
           <h2 className="text-3xl font-extrabold text-foreground font-[var(--font-heading)] md:text-4xl">
             Explore by{" "}
-            <span className="text-primary">category</span>
+            <span className="text-accent-blue">category</span>
           </h2>
           <Link
             href="#"

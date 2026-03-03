@@ -84,7 +84,7 @@ export function LatestJobs() {
         <div className="flex items-end justify-between">
           <h2 className="text-3xl font-extrabold text-foreground font-[var(--font-heading)] md:text-4xl">
             Latest{" "}
-            <span className="text-primary">jobs open</span>
+            <span className="text-accent-blue">jobs open</span>
           </h2>
           <Link
             href="#"

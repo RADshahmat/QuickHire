@@ -8,24 +8,42 @@ const popularSearches = ["UI Designer", "UX Researcher", "Android", "Admin"]
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-20">
+    <section className="relative overflow-hidden bg-[#F8F8FD]">
+      {/* Background Pattern */}
+      <Image
+        src="/images/pattern.svg"
+        alt="Pattern"
+        width={900}
+        height={940}
+        className="absolute bottom-0 right-0 z-0 w-[200px] sm:w-[400px] lg:w-[900px]"
+      />
+
+      {/* Main Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 ">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+          {/* Left Text + Search */}
           <div>
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground font-[var(--font-heading)] md:text-5xl lg:text-6xl text-balance">
-              Discover{" "}
-              <br className="hidden sm:block" />
-              more than{" "}
-              <br className="hidden sm:block" />
-              <span className="text-primary">5000+ Jobs</span>
+              Discover <br className="hidden sm:block" />
+              more than <br className="hidden sm:block" />
+              <span className="text-accent-blue">5000+ Jobs</span>
             </h1>
-            <div className="mt-1 h-2 w-40 rounded-full bg-primary/20 md:w-52" />
+
+            <Image
+              src="/images/Vector.svg"
+              alt="Decorative shape"
+              width={370}
+              height={10}
+              className="mt-4"
+            />
 
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Great platform for the job seeker that searching for new career heights and passionate about startups.
+              Great platform for the job seeker that searching for new career
+              heights and passionate about startups.
             </p>
 
-            <div className="mt-8 flex flex-col rounded-xl border border-border bg-background p-2 shadow-lg sm:flex-row sm:items-center">
+            {/* Search Bar */}
+            <div className="relative z-20 mt-8 flex flex-col rounded-xl border border-border bg-white p-2 shadow-xl sm:flex-row sm:items-center lg:w-[120%] lg:-mr-32">
               <div className="flex flex-1 items-center gap-2 px-3 py-2">
                 <Search className="size-5 shrink-0 text-muted-foreground" />
                 <input
@@ -45,27 +63,33 @@ export function Hero() {
               </Button>
             </div>
 
+            {/* Popular Searches */}
             <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
               <span className="text-muted-foreground">Popular :</span>
               {popularSearches.map((term) => (
-                <span key={term} className="text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
-                  {term}{popularSearches.indexOf(term) < popularSearches.length - 1 ? "," : ""}
+                <span
+                  key={term}
+                  className="text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
+                >
+                  {term}
+                  {popularSearches.indexOf(term) < popularSearches.length - 1
+                    ? ","
+                    : ""}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="hidden justify-end lg:flex">
-            <div className="relative">
-              <Image
-                src="/images/hero-person.jpg"
-                alt="Professional looking for jobs"
-                width={480}
-                height={520}
-                className="rounded-2xl object-cover"
-                priority
-              />
-            </div>
+          {/* Right Image (only visible on large screens) */}
+          <div className="hidden relative justify-end lg:flex">
+            <Image
+              src="/images/hero-person.png"
+              alt="Professional looking for jobs"
+              width={450}
+              height={500}
+              className="relative z-20 object-cover "
+              priority
+            />
           </div>
         </div>
       </div>
