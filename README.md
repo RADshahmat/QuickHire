@@ -7,6 +7,7 @@ The platform allows users to browse job listings, view detailed job descriptions
 This project was developed as part of a software engineering technical evaluation to demonstrate frontend UI skills, backend API design, database structure, validation, and overall architecture.
 
 🏗 Monorepo Structure
+
 quickhire/
 │
 ├── frontend/          # Next.js (App Router) + Redux Toolkit
