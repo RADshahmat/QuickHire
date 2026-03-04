@@ -12,14 +12,14 @@ import {
 } from "lucide-react"
 
 const categories = [
-  { name: "Design", count: 235, icon: Palette, highlighted: false },
-  { name: "Sales", count: 756, icon: BarChart3, highlighted: false },
-  { name: "Marketing", count: 140, icon: Megaphone, highlighted: true },
-  { name: "Finance", count: 325, icon: DollarSign, highlighted: false },
-  { name: "Technology", count: 436, icon: Monitor, highlighted: false },
-  { name: "Engineering", count: 542, icon: Code2, highlighted: false },
-  { name: "Business", count: 211, icon: Briefcase, highlighted: false },
-  { name: "Human Resource", count: 346, icon: Users, highlighted: false },
+  { name: "Design", count: 235, icon: Palette },
+  { name: "Sales", count: 756, icon: BarChart3 },
+  { name: "Marketing", count: 140, icon: Megaphone },
+  { name: "Finance", count: 325, icon: DollarSign },
+  { name: "Technology", count: 436, icon: Monitor },
+  { name: "Engineering", count: 542, icon: Code2 },
+  { name: "Business", count: 211, icon: Briefcase },
+  { name: "Human Resource", count: 346, icon: Users },
 ]
 
 export function Categories() {
@@ -47,46 +47,18 @@ export function Categories() {
               <Link
                 key={cat.name}
                 href="#"
-                className={`group flex flex-col items-start rounded-xl border p-5 transition-all hover:border-primary hover:shadow-md lg:p-6 ${
-                  cat.highlighted
-                    ? "border-primary bg-primary text-primary-foreground shadow-md"
-                    : "border-border bg-background text-foreground"
-                }`}
+className="group flex flex-col items-start rounded-xl border border-border bg-background p-5 text-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-md lg:p-6"
               >
-                <Icon
-                  className={`size-8 ${
-                    cat.highlighted
-                      ? "text-primary-foreground"
-                      : "text-primary"
-                  }`}
-                />
-                <h3
-                  className={`mt-4 text-base font-bold font-[var(--font-heading)] ${
-                    cat.highlighted
-                      ? "text-primary-foreground"
-                      : "text-foreground"
-                  }`}
-                >
-                  {cat.name}
-                </h3>
-                <div className="mt-1 flex items-center gap-1">
-                  <span
-                    className={`text-sm ${
-                      cat.highlighted
-                        ? "text-primary-foreground/80"
-                        : "text-muted-foreground"
-                    }`}
-                  >
-                    {cat.count} jobs available
-                  </span>
-                  <ArrowRight
-                    className={`size-3.5 ${
-                      cat.highlighted
-                        ? "text-primary-foreground/80"
-                        : "text-muted-foreground"
-                    }`}
-                  />
-                </div>
+<Icon className="size-8 text-primary transition-colors group-hover:text-primary-foreground" />
+<h3 className="mt-4 text-base font-bold font-[var(--font-heading)] transition-colors group-hover:text-primary-foreground">
+  {cat.name}
+</h3>
+<div className="mt-1 flex items-center gap-1">
+  <span className="text-sm text-muted-foreground transition-colors group-hover:text-primary-foreground/80">
+    {cat.count} jobs available
+  </span>
+  <ArrowRight className="size-3.5 text-muted-foreground transition-colors group-hover:text-primary-foreground/80" />
+</div>
               </Link>
             )
           })}
