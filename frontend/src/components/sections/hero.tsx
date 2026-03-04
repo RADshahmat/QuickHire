@@ -3,6 +3,8 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Search, MapPin, ChevronDown } from "lucide-react"
+import { Input } from "../ui/input"
+import { Select } from "../ui/select"
 
 const popularSearches = ["UI Designer", "UX Researcher", "Android", "Admin"]
 
@@ -10,7 +12,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#F8F8FD] [clip-path:polygon(0_0,100%_0,100%_75%,80%_100%,0_100%)] !border-0 !outline-none">
       {/* Background Pattern */}
-      
+
       <Image
         src="/images/pattern.svg"
         alt="Pattern"
@@ -44,10 +46,10 @@ export function Hero() {
             </p>
 
             {/* Search Bar */}
-            <div className="relative z-20 mt-8 flex flex-col rounded-xl border border-border bg-white p-2 shadow-xl sm:flex-row sm:items-center lg:w-[120%] lg:-mr-32">
+            <div className="relative z-20 mt-8 flex flex-col border border-border bg-white p-2 shadow-xl sm:flex-row sm:items-center lg:w-[120%] lg:-mr-32">
               <div className="flex flex-1 items-center gap-2 px-3 py-2">
                 <Search className="size-5 shrink-0 text-muted-foreground" />
-                <input
+                <Input
                   type="text"
                   placeholder="Job title or keyword"
                   className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
@@ -56,10 +58,12 @@ export function Hero() {
               <div className="hidden h-8 w-px bg-border sm:block" />
               <div className="flex flex-1 items-center gap-2 px-3 py-2">
                 <MapPin className="size-5 shrink-0 text-muted-foreground" />
-                <span className="text-sm text-foreground">Florence, Italy</span>
+                <Select >
+                  Florence, Italy
+                </Select>
                 <ChevronDown className="ml-auto size-4 shrink-0 text-muted-foreground" />
               </div>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-6 py-5 text-sm font-semibold sm:ml-2">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-5 text-sm font-semibold sm:ml-2">
                 Search my job
               </Button>
             </div>
@@ -95,5 +99,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight } from "lucide-react"
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 
 const featuredJobs = [
   {
@@ -99,7 +99,7 @@ const featuredJobs = [
     logoBg: "bg-sky-100",
     logoColor: "text-sky-600",
   },
-]
+];
 
 export function FeaturedJobs() {
   return (
@@ -107,8 +107,7 @@ export function FeaturedJobs() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-end justify-between">
           <h2 className="text-3xl font-semibold text-foreground font-title md:text-4xl">
-            Featured{" "}
-            <span className="text-accent-blue">jobs</span>
+            Featured <span className="text-accent-blue">jobs</span>
           </h2>
           <Link
             href="#"
@@ -127,10 +126,15 @@ export function FeaturedJobs() {
               className="group flex flex-col rounded-xl border border-border bg-background p-5 transition-all hover:border-primary/30 hover:shadow-md"
             >
               <div className="flex items-start justify-between">
-                <div className={`flex size-10 items-center justify-center rounded-lg text-sm font-bold ${job.logoBg} ${job.logoColor}`}>
+                <div
+                  className={`flex size-10 items-center justify-center rounded-lg text-sm font-bold ${job.logoBg} ${job.logoColor}`}
+                >
                   {job.logo}
                 </div>
-                <Badge variant="outline" className="text-xs font-medium border-primary/20 text-primary">
+                <Badge
+                  variant="outline"
+                  className="text-xs font-medium border-primary/20 text-primary"
+                >
                   {job.type}
                 </Badge>
               </div>
@@ -168,5 +172,5 @@ export function FeaturedJobs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

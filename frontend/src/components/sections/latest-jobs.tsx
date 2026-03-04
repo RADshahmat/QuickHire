@@ -1,6 +1,7 @@
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 
 const latestJobs = [
   {
@@ -75,16 +76,22 @@ const latestJobs = [
     logoBg: "bg-indigo-100",
     logoColor: "text-indigo-600",
   },
-]
+];
 
 export function LatestJobs() {
   return (
-    <section className="bg-[#F8F8FD] py-14 lg:py-20">
+    <section className="relative bg-[#F8F8FD] py-14 lg:py-15 z-10 overflow-hidden [clip-path:polygon(70px_0,_100%_0,_100%_100%,_0_100%,_0_70px)]">
+      <Image
+        src="/images/pattern2.svg"
+        alt="Pattern"
+        width={700}
+        height={600}
+        className="hidden lg:block lg:absolute lg:top-0 lg:right-0 lg:-z-10 object-cover opacity-80"
+      />
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-end justify-between">
           <h2 className="text-3xl font-semibold text-foreground font-title md:text-4xl">
-            Latest{" "}
-            <span className="text-accent-blue">jobs open</span>
+            Latest <span className="text-accent-blue">jobs open</span>
           </h2>
           <Link
             href="#"
@@ -102,7 +109,9 @@ export function LatestJobs() {
               href="#"
               className="group flex items-start gap-4 bg-background p-4 transition-all hover:border-primary/30 hover:shadow-md lg:p-5"
             >
-              <div className={`flex size-12 shrink-0 items-center justify-center rounded-xl text-sm font-semibold ${job.logoBg} ${job.logoColor}`}>
+              <div
+                className={`flex size-12 shrink-0 items-center justify-center rounded-xl text-sm font-semibold ${job.logoBg} ${job.logoColor}`}
+              >
                 {job.logo}
               </div>
               <div className="flex-1 min-w-0">
@@ -117,12 +126,12 @@ export function LatestJobs() {
                     <Badge
                       key={tag}
                       variant="outline"
-                      className={`text-xs font-medium ${
+                      className={`text-xs font-medium rounded-xl ${
                         tag === "Full-Time"
                           ? "border-chart-2 text-chart-2"
                           : tag === "Marketing"
-                          ? "border-amber-200 bg-amber-50 text-amber-700"
-                          : "border-primary/20 bg-primary/5 text-primary"
+                            ? "border-amber-200 bg-amber-50 text-amber-700"
+                            : "border-primary/20 bg-primary/5 text-primary"
                       }`}
                     >
                       {tag}
@@ -145,5 +154,5 @@ export function LatestJobs() {
         </div>
       </div>
     </section>
-  )
+  );
 }
